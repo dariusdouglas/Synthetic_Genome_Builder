@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{{ block.super }}
+{% block content %}
+
+    <div class="col-sm-8 col-sm-offset-2">
+<form method="get" action="" style="margin-bottom: 2%">
+    <input type="text" name="q" placeholder="Search Genomes" value="{{ request.GET.q }}"/>
+    <input type="submit" value="Search"/>
+    </form>
+{% for genome in genome_list %}
+        <div class="row">
+  <div class="col-sm-12">
+    <div class="thumbnail">
+
+      <div class="caption">
+        <h3><a href="{{ genome.get_absolute_url }}"> <h2>{{ genome.title }}</h2> </a>
+            <small> {{ genome.timestamp }}</small></h3>
+        <p style="word-wrap: break-word">{{ genome.sequence }}</p>
+      </div>
+    </div>
+  </div>
+     </div>
+{% endfor %}
+
+    </div>
+{% endblock %}

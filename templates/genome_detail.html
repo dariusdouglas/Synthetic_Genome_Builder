@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<div class="col-sm-8 col-sm-offset-2">
+<h1>{{ genome.title }} <small style="color: lightgrey"> {{ genome.timestamp }}</small></h1>
+
+    <!-- color: floralwhite;-->
+<p style="word-wrap: break-word;">{{ genome.sequence}}</p>
+    <a href = "../../media/{{ genome.file }}" target="_blank" style="; text-decoration: underline">View Proteins in {{ genome.title }}</a>
+
+    </div>
+{% endblock %}
